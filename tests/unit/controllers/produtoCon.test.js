@@ -10,7 +10,7 @@ const app = require('../../../src/app');
 
 const connection = require('../../../src/models/connection');
 
-const { produtoComId } = require('./mocks/productController');
+const { produtoComId } = require('./mocks/produtoCon');
 
 describe('Teste de products', function () {
   it("testando o controller", async function () {

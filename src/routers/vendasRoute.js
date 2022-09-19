@@ -4,8 +4,8 @@ const salesMiddle = require('../middlewares/salesMiddle');
 
 const router = express.Router();
 
-router.get('/', vendasCon.openProduct);
+router.get('/', vendasCon.funcProduto);
 
-router.get('/:id', salesMiddle, vendasCon.openProduct);
+router.get('/:id', salesMiddle, vendasCon.funcProduto);
 
 module.exports = router;

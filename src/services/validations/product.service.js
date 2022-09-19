@@ -14,19 +14,19 @@ const create = async ({ name }) => {
   return { id: newProduct, name };
 };
 
-const updateByProduct = async ({ name, id }) => {
+const atualizandoProduto = async ({ name, id }) => {
   await console.log(name, id);
   await pModel.updateById(name, id);
   return { id, name };
 };
 
-const deleteByProduct = async ({ id }) => {
+const deletandoP = async ({ id }) => {
   await pModel.deleteById(id);
 };
 
 module.exports = {
   getWaitingProducts,
   create,
-  updateByProduct,
-  deleteByProduct,
+  atualizandoProduto,
+  deletandoP,
 };

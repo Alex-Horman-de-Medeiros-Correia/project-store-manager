@@ -1,23 +1,23 @@
 const express = require('express');
-const productController = require('../controllers/productController');
-const productMiddle = require('../middlewares/ProductMiddle');
-const charactersMiddle = require('../middlewares/CaractersMiddle');
+const produtoCon = require('../controllers/produtoCon');
+const pMidle = require('../middlewares/pMidle');
+const charactersMiddle = require('../middlewares/CaMid');
 
 const router = express.Router();
 
-router.get('/', productController.openProduct);
+router.get('/', produtoCon.funcProduto);
 
-router.get('/:id', productMiddle, productController.openProduct);
+router.get('/:id', pMidle, produtoCon.funcProduto);
 
-router.post('/', charactersMiddle, productController.create);
+router.post('/', charactersMiddle, produtoCon.create);
 
-router.delete('/:id', productMiddle, productController.deleteByProduct);
+router.delete('/:id', pMidle, produtoCon.deletandoP);
 
 router.put(
   '/:id',
   charactersMiddle,
-  productMiddle,
-  productController.updateByProduct,
+  pMidle,
+  produtoCon.atualizandoProduto,
 );
 
 module.exports = router;
