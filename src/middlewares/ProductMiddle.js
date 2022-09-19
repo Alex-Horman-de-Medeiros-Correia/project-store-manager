@@ -2,7 +2,7 @@ const findBy = require('../models');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
-  const result = await findBy.productModel.findByAllId();
+  const result = await findBy.pModel.findByAllId();
   const result2 = await result.some((item) => Number(item.id) === Number(id));
   console.log(result2);
 

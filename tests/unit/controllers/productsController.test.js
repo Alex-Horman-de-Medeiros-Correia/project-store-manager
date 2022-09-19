@@ -10,21 +10,21 @@ const app = require('../../../src/app');
 
 const connection = require('../../../src/models/connection');
 
-const { CorrectProductId } = require('./mocks/productController');
+const { produtoComId } = require('./mocks/productController');
 
-describe('Teste de integração de products', function () {
+describe('Teste de products', function () {
   it("testando o controller", async function () {
     sinon
       .stub(connection, "execute")
       .onFirstCall()
-      .resolves([[CorrectProductId]])
+      .resolves([[produtoComId]])
 
     const response = await chai
       .request(app)
       .get("/products");
 
     expect(response.status).to.be.equal(200);
-    expect(response.body).to.be.deep.equal([CorrectProductId]);
+    expect(response.body).to.be.deep.equal([produtoComId]);
   });
   afterEach(sinon.restore);
 })

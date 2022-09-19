@@ -1,4 +1,4 @@
-const CorrectProductId = [
+const produtoComId = [
   {
     id: 1,
     name: "Martelo de Thor",
@@ -6,5 +6,5 @@ const CorrectProductId = [
 ];
 
 module.exports = {
-  CorrectProductId,
+  produtoComId,
 };

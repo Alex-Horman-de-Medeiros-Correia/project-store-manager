@@ -1,13 +1,13 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
-const productModel = require('../../../src/models/productModel');
+const pModel = require('../../../src/models/pModel');
 const products = require('../../../src/services/validations/product.service');
-const { CorrectProductId } = require('./mocks/productsServiceMocks');
+const { produtoComId } = require('./mocks/productsServiceMocks');
 
 describe('Verificando o service products', function () {
-  describe('Procura de id existente', function () {
-    it("id inexistente não encontrado", async function () {
-      sinon.stub(productModel, "findByProductId").resolves(undefined);
+  describe('Procura de id que não existe', function () {
+    it("id inexistente", async function () {
+      sinon.stub(pModel, "findByProductId").resolves(undefined);
 
       const body = { Id: 1 };
       const error = await products.getWaitingProducts(body);
