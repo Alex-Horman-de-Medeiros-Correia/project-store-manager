@@ -1,14 +1,11 @@
 const express = require('express');
-
-const controller = require('../controllers/sales.controller');
-const middle = require('../middlewares/validationSale');
+const salesController = require('../controllers/salesController');
+const salesMiddle = require('../middlewares/salesMiddle');
 
 const router = express.Router();
 
-router.get('/', controller.getAllSalesController);
+router.get('/', salesController.openProduct);
 
-router.post('/', middle.validateSales, middle.validateIdSales, controller.createSalesController);
-
-router.get('/:id', controller.getAllSalesControllerById);
+router.get('/:id', salesMiddle, salesController.openProduct);
 
 module.exports = router;
