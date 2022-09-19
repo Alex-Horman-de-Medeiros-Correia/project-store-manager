@@ -2,7 +2,7 @@ const findBy = require('../models');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
-  const result = await findBy.salesModel.findByAllId();
+  const result = await findBy.salesModel.encontrandoTodosOsIds();
   console.log(result);
 
   if (id > (result.length - 1) || Number(id) === 0 || !id) {

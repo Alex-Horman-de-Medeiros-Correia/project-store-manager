@@ -1,6 +1,8 @@
 const connection = require('./connection');
 
-const findByProductId = async (productId) => {
+// vale dizer que tanto no model quanto em outros aspectos da arquitetura MSC, eu recebi ajuda de colegas.
+
+const encontrandoProdutoPeloId = async (productId) => {
   const [result] = await connection.execute(
     `SELECT sa.date date, sp.product_id productId, sp.quantity
 FROM StoreManager.sales sa
@@ -13,7 +15,7 @@ ORDER BY sp.sale_id, sp.product_id;`,
   return result;
 };
 
-const findByAllId = async () => {
+const encontrandoTodosOsIds = async () => {
   const [result] = await connection.execute(
     `SELECT sp.sale_id saleId, sa.date date, sp.product_id productId, sp.quantity
 FROM StoreManager.sales sa
@@ -25,6 +27,6 @@ ORDER BY sp.sale_id, sp.product_id;`,
 };
 
 module.exports = {
-  findByProductId,
-  findByAllId,
+  encontrandoProdutoPeloId,
+  encontrandoTodosOsIds,
 };

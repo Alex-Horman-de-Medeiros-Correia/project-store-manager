@@ -2,10 +2,10 @@ const { salesModel } = require('../../models');
 
 const getWaitingProducts = async (id) => {
   if (id) {
-    const result = await salesModel.findByProductId(id);
+    const result = await salesModel.encontrandoProdutoPeloId(id);
     return { type: null, message: result };
   }
-  const result = await salesModel.findByAllId();
+  const result = await salesModel.encontrandoTodosOsIds();
   return { type: null, message: result };
 };
 

@@ -10,7 +10,7 @@ describe('Testes no Model de products', function () {
   it('GET com o id do model products', async function () {
     sinon.stub(connection, 'execute').resolves([[productsFromDB[0]]]);
 
-    const result = await pModel.findByProductId(1);
+    const result = await pModel.encontrandoProdutoPeloId(1);
 
     expect(result).to.be.deep.equal(products[0]);
   });
@@ -18,7 +18,7 @@ describe('Testes no Model de products', function () {
   it("GET com os ids do models products", async function () {
     sinon.stub(connection, "execute").resolves([[productsFromDB[0]]]);
 
-    const [result] = await pModel.findByAllId();
+    const [result] = await pModel.encontrandoTodosOsIds();
 
     expect(result).to.be.deep.equal(products[0]);
   });

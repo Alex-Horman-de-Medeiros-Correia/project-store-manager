@@ -7,7 +7,7 @@ const { produtoComId } = require('./mocks/productsServiceMocks');
 describe('Verificando o service products', function () {
   describe('Procura de id que não existe', function () {
     it("id inexistente", async function () {
-      sinon.stub(pModel, "findByProductId").resolves(undefined);
+      sinon.stub(pModel, "encontrandoProdutoPeloId").resolves(undefined);
 
       const body = { Id: 1 };
       const error = await products.getWaitingProducts(body);

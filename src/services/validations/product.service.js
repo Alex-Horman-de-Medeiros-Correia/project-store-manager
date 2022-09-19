@@ -2,10 +2,10 @@ const { pModel } = require('../../models');
 
 const getWaitingProducts = async (id) => {
   if (id) {
-    const result = await pModel.findByProductId(id);
+    const result = await pModel.encontrandoProdutoPeloId(id);
     return { type: null, message: result };
   }
-  const result = await pModel.findByAllId();
+  const result = await pModel.encontrandoTodosOsIds();
   return { type: null, message: result };
 };
 

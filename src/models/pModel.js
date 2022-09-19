@@ -6,7 +6,7 @@ const insert = async ({ name }) => {
   return result.insertId;
 };
 
-const findByProductId = async (productId) => {
+const encontrandoProdutoPeloId = async (productId) => {
   const [[result]] = await connection.execute(
     'SELECT * FROM StoreManager.products WHERE id = ?',
     [productId],
@@ -14,7 +14,7 @@ const findByProductId = async (productId) => {
   return result;
 };
 
-const findByAllId = async () => {
+const encontrandoTodosOsIds = async () => {
   const [result] = await connection.execute(
     'SELECT * FROM StoreManager.products',
   );
@@ -42,8 +42,8 @@ const deleteById = async (productId) => {
 };
 
 module.exports = {
-  findByProductId,
-  findByAllId,
+  encontrandoProdutoPeloId,
+  encontrandoTodosOsIds,
   insert,
   updateById,
   deleteById,
